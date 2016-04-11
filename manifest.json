@@ -1,0 +1,14 @@
+{
+    "name": "cobrowse-docs",
+    "version": "1.0.0",
+    "indexFiles": [
+        {
+            "url": "/cobrowse/docs/",
+            "file": "/index.html"
+        },
+        {
+            "url": "/cobrowse/docs/tech-talks/micro-services/",
+            "file": "/tech-talks/micro-services/index.html"
+        }
+    ]
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=792, user-scalable=no"><meta http-equiv="x-ua-compatible" content="ie=edge"><title>Developing Large Products with Micro-services</title><link rel="stylesheet" href="/dist/micro-services-45702cee.css"></head><body class="shower list"><header class="caption"><h1>Developing Large Products with Micro-services</h1></header><section class="slide"><h2>Developing Large Products with Micro-services</h2><div style="margin-top: 1em;" class="large"><p><strong>Phillip Gates-Idem</strong>,
+Lead Software Engineer</p>
+<p><img src="/dist/logo-2786e776.svg" style="width: 64px; height: auto">
+Interactive Intelligence</p>
+<p>Durham, NC</p>
+</div></section><section class="slide"><h2>Micro-service Architecture</h2><div class="large"><p><strong>TechCrunch:</strong></p>
+<blockquote>
+<p>Microservices is an approach to building software that shifts
+away from large monolithic applications toward small, loosely
+coupled and composable autonomous pieces.</p>
+</blockquote>
+</div></section><section class="slide"><h2>Monolithic Architecture</h2><div class="large"><p>A <strong>monolithic application</strong> describes a single-tiered software
+application in which the user interface and data access code
+are combined into a single program.</p>
+</div></section><section class="slide"><h2>Monolithic Architecture Diagram</h2><div><img src="/dist/Monolithic-Architecture-0f9202ab.svg" style="width: auto; height: 90%"></div></section><section class="slide"><h2>Monolithic Architecture Pros & Cons</h2><div class="medium"><h3 id="pros-">Pros:</h3>
+<ul>
+<li>Simple to deploy for on-premise. Just one installer.</li>
+<li>All parts moved in lock-step together.</li>
+</ul>
+<h3 id="cons-">Cons:</h3>
+<ul>
+<li>Difficult to scale horizontally</li>
+<li>Difficult to upgrade (with possible downtime) which results in less frequent upgrades (stale deployments)</li>
+</ul>
+</div></section><section class="slide"><h2>Micro-service Architecture Diagram</h2><div><img src="/dist/Micro-Service-Architecture-5d3e793e.svg" style="width: auto; height: 90%"></div></section><section class="slide"><h2>Companies Building Micro-services</h2><div><p><img src="/dist/logo-netflix-6d8daaa7.png" style="height: 1.5em; width: auto;">
+&quot;microservices architecture with many small teams responsible for the end-to-end development of hundreds of microservices&quot;</p>
+<p><img src="/dist/logo-2786e776.svg" style="height: 1.5em; width: auto;"> <strong>Interactive Intelligence:</strong>
+&quot;Purecloud is made up of over 120+ loosely coupled Microservices&quot;</p>
+<p><img src="/dist/logo-spotify-c708b5e1.png" style="height: 1.5em; width: auto;">
+&quot;The Spotify backend architecture is heavily service oriented. The backend is composed of about a hundred services, most of them fairly small and simple. Services are written in Python or Java with a few exceptions.&quot;</p>
+<p><strong>Other examples:</strong> Airbnb, Disney, Dropbox, GE, Goldman Sachs and Twitter</p>
+</div></section><section class="slide"><h2>Monolithic vs. Micro-service Architecture</h2><div class="medium"><table><thead><tr><th>Monolithic Architecture</th><th>Micro-services Architecture</th></tr></thead><tbody><tr><td>Tightly coupled subsystems</td><td>Loosely coupled subsystems</td></tr><tr><td>Vertical scaling<br><div class="subtext">(make the machines bigger)</div></td><td>Horizontal scaling<br><div class="subtext">(add more machines)</div></td></tr><tr><td>Upgrade and Maintenance Releases</td><td>Continuous Delivery <div class="subtext">(small incremental updates)</div></td></tr><tr><td>Failover</td><td>Auto scale with Load Balancing</td></tr></tbody></table></div></section><section class="slide"><h2>Vertical vs. Horizontal Scaling</h2><div><img src="/dist/Scaling-6c27b53e.svg" style="width: auto; height: 90%"></div></section><section class="slide"><h2>Public Facade or API Gateway</h2><div class="medium"><p>In complex micro-service architectures, a facade provides the unified public interface.</p>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Load Balancing</li>
+<li>Path-based routing</li>
+<li>Scatter gather</li>
+<li>Rate Limiting</li>
+<li>Logging / Auditing</li>
+<li>Security</li>
+</ul>
+</div></section><section class="slide"><h2>Inter-service Communication</h2><div class="large"><ul>
+<li>Behind the facade, services communicate with each other
+via HTTP or scaleable message bus.<ul>
+<li>Publish/Subscribe (a.k.a. <em>&quot;pubsub&quot;</em>)</li>
+<li>Queue</li>
+<li>Point-to-Point (Asynchronous or Synchronous)</li>
+</ul>
+</li>
+</ul>
+</div></section><section class="slide"><h2>Messaging Technologies</h2><div class="large"><ul>
+<li>HTTP</li>
+<li>WebSocket</li>
+<li><img src="/dist/kafka-0c579c31.png" style="height: 1.5em; width: auto;"></li>
+<li><img src="/dist/redis-14770587.png" style="height: 1em; width: auto;"></li>
+<li><img src="/dist/rabbitmq-6551959f.png" style="height: 1em; width: auto;"></li>
+<li><img src="/dist/zeromq-9bd6d4cd.png" style="height: 1em; width: auto;"></li>
+<li><span style="color: #e47911">Amazon Simple Queue Service (SQS)</span></li>
+</ul>
+</div></section><section class="slide"><h2>When to Use Micro-services</h2><div class="large"><ul>
+<li>Large product with multiple teams</li>
+<li>When your service is hosted in the &quot;cloud&quot;
+(Amazon Web Services, Google Cloud Computing, Microsoft Azure, etc.)</li>
+</ul>
+</div></section><section class="slide"><h2>Continuous Delivery</h2><div class="large"><ul>
+<li>Move code and changes quickly through the pipeline with automated tests and deployments.</li>
+<li>Promotion process moves immutable builds or images through environments (Dev, Test, Production)</li>
+<li>Automate as much as possible</li>
+</ul>
+</div></section><section class="slide"><h2>Tooling</h2><div class="large"><ul>
+<li>Need very solid build &amp; deploy system</li>
+<li>Strive for immutable builds</li>
+<li>Infrastructure changes should be automated via code!</li>
+<li>Assume that machines and services will fail</li>
+<li>Monitoring is essential</li>
+</ul>
+</div></section><section class="slide"><h2>Fault Tolerence</h2><div class="large"><ul>
+<li>Compute instances should be stateless and easily replaceable</li>
+<li>Auto scaling cluster should provide redundancy</li>
+<li>Retry logic</li>
+<li>Durable messaging layer (Kafka, SQS, etc.)</li>
+</ul>
+</div></section><section class="slide"><h2>Overhead</h2><div class="large"><ul>
+<li>Micro-services add extra overhead that <strong>might not be
+necessary for small products</strong></li>
+<li>Don’t over-engineer but <strong>try to anticipate growth</strong></li>
+</ul>
+</div></section><section class="slide"><h2>Autonomy</h2><div class="large"><ul>
+<li>Let teams own the code, infrastructure, and tools as much as possible</li>
+<li>Make sure teams are choosing technologies for the right reasons</li>
+<li>Minimize sharing of resources<ul>
+<li>Let teams have their own cache and database</li>
+</ul>
+</li>
+</ul>
+</div></section><section class="slide"><h2>Versioning</h2><div class="large"><ul>
+<li>All APIs should be versioned<ul>
+<li>e.g. <code>/api/v3/users</code></li>
+<li>HTTP header</li>
+</ul>
+</li>
+<li>Deprecate before removing</li>
+<li>Maintain backward compatibility when possible</li>
+</ul>
+</div></section><section class="slide"><h2>Recap</h2><div class="medium"><ul>
+<li>Divide and conquer!</li>
+<li>Give teams autonomy about language and technology choices</li>
+<li>Build independent micro-services that communicate with language-agnostic API</li>
+<li>Make it easy to deploy code and infrastructure changes</li>
+</ul>
+</div></section><div class="progress"><div></div></div><script src="/dist/micro-services-3d0a278a.js"></script>
+<script>$rmod_cobrowse_docs.ready();</script></body></html>
