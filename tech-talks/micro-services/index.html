@@ -22,14 +22,26 @@ are combined into a single program.</p>
 <li>Difficult to scale horizontally</li>
 <li>Difficult to upgrade (with possible downtime) which results in less frequent upgrades (stale deployments)</li>
 </ul>
-</div></section><section class="slide"><h2>Micro-service Architecture Diagram</h2><div><img src="http://philidem.github.io/Micro-Service-Architecture-5d3e793e.svg" style="width: auto; height: 90%"></div></section><section class="slide"><h2>Companies Building Micro-services</h2><div><p><img src="http://philidem.github.io/logo-netflix-6d8daaa7.png" style="height: 1.5em; width: auto;">
+</div></section><section class="slide"><h2>Micro-service Architecture Diagram</h2><div><img src="http://philidem.github.io/Micro-Service-Architecture-5d3e793e.svg" style="width: auto; height: 90%"></div></section><section class="slide"><h2>Service-Oriented Architecture (SOA)</h2><div class="large"><ul>
+<li>Boundaries are explicit</li>
+<li>Services are autonomous</li>
+<li>Services share schema and contract</li>
+<li>Service compatibility is based on policy</li>
+</ul>
+<p><strong>Micro-services are a specialization of SOA</strong></p>
+</div></section><section class="slide"><h2>Micro-services</h2><div class="large"><p><img src="http://philidem.github.io/its-glorious-8ed170f8.jpg" style="width: 450px; height: auto"></p>
+</div></section><section class="slide"><h2>Companies Building Micro-services</h2><div><p><img src="http://philidem.github.io/logo-netflix-6d8daaa7.png" style="height: 1.5em; width: auto;">
 &quot;microservices architecture with many small teams responsible for the end-to-end development of hundreds of microservices&quot;</p>
 <p><img src="http://philidem.github.io/logo-2786e776.svg" style="height: 1.5em; width: auto;"> <strong>Interactive Intelligence:</strong>
 &quot;Purecloud is made up of over 120+ loosely coupled Microservices&quot;</p>
 <p><img src="http://philidem.github.io/logo-spotify-c708b5e1.png" style="height: 1.5em; width: auto;">
 &quot;The Spotify backend architecture is heavily service oriented. The backend is composed of about a hundred services, most of them fairly small and simple. Services are written in Python or Java with a few exceptions.&quot;</p>
 <p><strong>Other examples:</strong> Airbnb, Disney, Dropbox, GE, Goldman Sachs and Twitter</p>
-</div></section><section class="slide"><h2>Monolithic vs. Micro-service Architecture</h2><div class="medium"><table><thead><tr><th>Monolithic Architecture</th><th>Micro-services Architecture</th></tr></thead><tbody><tr><td>Tightly coupled subsystems</td><td>Loosely coupled subsystems</td></tr><tr><td>Vertical scaling<br><div class="subtext">(make the machines bigger)</div></td><td>Horizontal scaling<br><div class="subtext">(add more machines)</div></td></tr><tr><td>Upgrade and Maintenance Releases</td><td>Continuous Delivery <div class="subtext">(small incremental updates)</div></td></tr><tr><td>Failover</td><td>Auto scale with Load Balancing</td></tr></tbody></table></div></section><section class="slide"><h2>Vertical vs. Horizontal Scaling</h2><div><img src="http://philidem.github.io/Scaling-6c27b53e.svg" style="width: auto; height: 90%"></div></section><section class="slide"><h2>Public Facade or API Gateway</h2><div class="medium"><p>In complex micro-service architectures, a facade provides the unified public interface.</p>
+</div></section><section class="slide"><h2>Monolithic vs. Micro-service Architecture</h2><div class="medium"><table><thead><tr><th>Monolithic Architecture</th><th>Micro-services Architecture</th></tr></thead><tbody><tr><td>Tightly coupled subsystems</td><td>Loosely coupled subsystems</td></tr><tr><td>Vertical scaling<br><div class="subtext">(make the machines bigger)</div></td><td>Horizontal scaling<br><div class="subtext">(add more machines)</div></td></tr><tr><td>Upgrade and Maintenance Releases</td><td>Continuous Delivery <div class="subtext">(small incremental updates)</div></td></tr><tr><td>Failover</td><td>Auto scale with Load Balancing</td></tr></tbody></table></div></section><section class="slide"><h2>Vertical vs. Horizontal Scaling</h2><div><img src="http://philidem.github.io/Scaling-6c27b53e.svg" style="width: auto; height: 90%"></div></section><section class="slide"><h2>Horizontal Scaling</h2><div class="large"><ul>
+<li>Add more machines based on current and predicted capacity</li>
+<li>Each micro-service can scale individually</li>
+</ul>
+</div></section><section class="slide"><h2>Public Facade or API Gateway</h2><div class="medium"><p>In complex micro-service architectures, a facade provides the unified public interface.</p>
 <p><strong>Features:</strong></p>
 <ul>
 <li>Load Balancing</li>
@@ -79,17 +91,33 @@ via HTTP or scaleable message bus.<ul>
 <li>Auto scaling cluster should provide redundancy</li>
 <li>Retry logic</li>
 <li>Durable messaging layer (Kafka, SQS, etc.)</li>
+<li>Individual service failure less likely to bring down entire system
+(aim for diminished functionality)</li>
 </ul>
-</div></section><section class="slide"><h2>Overhead</h2><div class="large"><ul>
+</div></section><section class="slide"><h2>Micro-service Overhead</h2><div class="large"><ul>
 <li>Micro-services add extra overhead that <strong>might not be
 necessary for small products</strong></li>
 <li>Don’t over-engineer but <strong>try to anticipate growth</strong></li>
 </ul>
-</div></section><section class="slide"><h2>Autonomy</h2><div class="large"><ul>
+</div></section><section class="slide"><h2>Containerization</h2><div class="large"><p><img src="http://philidem.github.io/so-hot-right-now-152ec980.jpg" style="width: 600px; height: auto"></p>
+</div></section><section class="slide"><h2>Containerization</h2><div class="large"><ul>
+<li>Services can be deployed as <em>containers</em>
+that get distributed across your entire
+compute infrastructure.</li>
+<li>A single virtual or physical machine can host
+many different containers.</li>
+<li><a href="https://www.docker.com/" target="_blank">Docker</a></li>
+<li>Container Orchestration<ul>
+<li><a href="http://kubernetes.io/" target="_blank">Kubernetes</a></li>
+<li><a href="https://mesosphere.com/" target="_blank">Mesosphere DC/OS</a></li>
+</ul>
+</li>
+</ul>
+</div></section><section class="slide"><h2>Team Autonomy</h2><div class="large"><ul>
 <li>Let teams own the code, infrastructure, and tools as much as possible</li>
 <li>Make sure teams are choosing technologies for the right reasons</li>
 <li>Minimize sharing of resources<ul>
-<li>Let teams have their own cache and database</li>
+<li>For example, let teams have their own cache and database cluster</li>
 </ul>
 </li>
 </ul>
