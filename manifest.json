@@ -1,5 +1,5 @@
 {
-    "name": "cobrowse-docs",
+    "name": "philidem",
     "version": "1.0.0",
     "indexFiles": [
         {
@@ -9,6 +9,10 @@
         {
             "url": "/cobrowse/docs/tech-talks/micro-services/",
             "file": "/tech-talks/micro-services/index.html"
+        },
+        {
+            "url": "/cobrowse/docs/tech-talks/open-source/",
+            "file": "/tech-talks/open-source/index.html"
         }
     ]
 }
